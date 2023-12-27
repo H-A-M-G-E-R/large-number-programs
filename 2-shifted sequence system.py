@@ -47,9 +47,9 @@ d = input("Max length of the sequence after expansion? (leave it blank for no li
 if d != "":
     d = int(d)
 for i in range(c):
-    print(a)
     if a == []:
         break
     expand(a,b)
     if d != "":
         a = a[:d]
+    print(a)
