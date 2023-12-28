@@ -24,7 +24,7 @@ def expand(s,n):
                                 if s[k] < last :
                                     possible_bad_parts.append(replace_all_entries(s[k:len(s)-1],last))
                             bad_part = max(possible_bad_parts)
-                            while bad_part[len(bad_part)-1] < last and len(bad_part) > 1:
+                            while bad_part[len(bad_part)-1] < last and bad_part[len(bad_part)-1] > s[len(s)-2] and len(bad_part) > 1:
                                 bad_part.pop()
                             s.pop()
                             for l in range(n):
