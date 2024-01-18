@@ -24,8 +24,8 @@ def expand(sequence, n):
         for m in range(sequence[len(sequence)-1],0,-1):
             i = step_down(sequence, m, len(sequence)-1)
             if i != None:
-                sequence[len(sequence)-1] -= 1
+                sequence[len(sequence)-1] = m-1
                 sequence += sequence[i:] * n
                 return sequence
-            sequence.pop()
-            return sequence
+        sequence.pop()
+        return sequence
