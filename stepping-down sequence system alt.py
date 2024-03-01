@@ -21,15 +21,12 @@ def expand(sequence, n):
     if sequence == []:
         return []
     else:
-        for m in range(sequence[len(sequence)-1],0,-1):
-            i = step_down(sequence, m, len(sequence)-1)
-            if i != None:
-                sequence[len(sequence)-1] = m-1
-                sequence += sequence[i:] * n
-                return sequence
         if sequence[len(sequence)-1] > 0:
+            i = step_down(sequence, sequence[len(sequence)-1], len(sequence)-1)
+            if i == None:
+                i = len(sequence)-1
             sequence[len(sequence)-1] -= 1
-            sequence += sequence[len(sequence)-1:] * n
+            sequence += sequence[i:] * n
         else:
             sequence.pop()
         return sequence
