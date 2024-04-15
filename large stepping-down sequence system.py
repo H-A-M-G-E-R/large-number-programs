@@ -1,4 +1,4 @@
-# I think that [0,1,2] corresponds to ε_0, [0,1,2,3] corresponds to ψ_0(Ω_ω), and [0,2] corresponds to lim(BMS). Limit of this notation is [0,ω].
+# Limit of this notation is [0,ω].
 def step_down(sequence, Type, index):
     if index == 0:
         return
