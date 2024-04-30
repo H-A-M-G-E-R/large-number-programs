@@ -30,3 +30,26 @@ def expand(sequence, n):
         else:
             sequence.pop()
         return sequence
+def repeatedly_expand(sequence, n, limit, printparents=False):
+    if printparents:
+        print(str(sequence) + str(parents(sequence)))
+    else:
+        print(sequence)
+    while sequence != []:
+        expand(sequence, n)
+        sequence = sequence[:limit]
+        if printparents:
+            print(str(sequence) + str(parents(sequence)))
+        else:
+            print(sequence)
+def parents(sequence):
+    if sequence == []:
+        return []
+    else:
+        parents = [0]*len(sequence)
+        for i in range(1, sequence[len(sequence)-1]+1):
+            j = len(sequence)-1
+            while j != None:
+                parents[j] = i
+                j = step_down(sequence, i, j)
+        return parents
